@@ -39,23 +39,23 @@ function detailsTransfer() {
     document.getElementById('reg-no-out').innerHTML = reg;
 
     const institute = [
-        "Punjab Group of Colleges Islamabad",
-        "IMCB College Islamabad",
-        "APS College Islamabad",
-        "OPF College Islamabad",
-        "Fazaia Degree College Islamabad",
-        "FG College Islamabad",
-        "Iqra College Islamabad",
-        "Islamabad Model College for Boys",
-        "PAF College Islamabad",
-        "Roots College International Islamabad",
-        "Allama Iqbal Open University Islamabad (College Section)",
-        "F-10 College Islamabad",
-        "Margalla College Islamabad",
-        "H-8 College Islamabad",
-        "F-6 College Islamabad",
-        "Bahria College Islamabad",
-        "Fauji Foundation College Islamabad"
+        "Punjab UnGroup of Colleges Islamabad",
+        "IMBB College Islamabad",
+        "ACPS College Islamabad",
+        "OFPF College Islamabad",
+        "Bahri Degree College Islamabad",
+        "FAG College Islamabad",
+        "Square College Islamabad",
+        "Islamabad College J-12",
+        "PAAF College K-2 Islamabad",
+        "Stem College International Islamabad",
+        "Allama Iqbal Close University Islamabad (College Section)",
+        "F-120 College Islamabad",
+        "Margalla Top College Islamabad",
+        "H-18 College Islamabad",
+        "F-16 College Islamabad",
+        "Sky College Islamabad",
+        "Navy Foundation College Islamabad"
     ];
 
     ranIndex = Math.floor(Math.random() * institute.length);

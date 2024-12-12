@@ -110,8 +110,8 @@ header {
     right: 0;
     top: 15px;
     opacity: 0;
-    cursor: pointer;
     pointer-events: none;
+    text-align: justify;
     transition: all 0.2s;
 }
 
@@ -129,11 +129,17 @@ header {
     pointer-events: all;
 }
 
-.contact-info,
-.tooltip label {
+.contact-info {
     text-decoration-line: none;
 }
 
+.contact-info:hover {
+    opacity: 0.65;
+}
+
+.contact-info:active {
+    color: red;
+}
 
 .middle-layer {
     background-color: rgb(255, 255, 255);
@@ -384,6 +390,14 @@ h3 {
     border-radius: 50%;
     margin: 0;
     box-shadow: 0 0 10px rgb(0, 81, 255);
+}
+
+.stamp-ceb p {
+    font-family: Arial;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 footer {
