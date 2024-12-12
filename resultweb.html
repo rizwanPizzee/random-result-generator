@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/login-page.css">
+    <script src="javascript/java-s.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <title>Result Web</title>
+</head>
+
+<body>
+    <header>
+        <div class="left-head">
+            <div class="ceb-img-div">
+                <a href="">
+                    <img class="ceb-img" src="images/CEB.png" alt="ceb.png">
+                </a>
+            </div>
+        </div>
+
+        <div class="ceb-text">
+            <h1 class="ceb-heading">CENTRAL EXAM BOARD </h1>
+        </div>
+
+        <div class="right-head">
+            <div class="about-btn-div">
+                <p class="about-btn">About</p>
+                <div class="outer-tooltip">
+                    <div class="tooltip">
+                        <p>
+                            This web app simulates an exam results system, letting users input student details
+                            and generate random subject marks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-btn-div">
+                <p class="contact-btn">Conatct</p>
+                <div class="outer-tooltip">
+                    <div class="tooltip">
+                        <p>
+                            <a class="contact-info" href="mailto:rizwanpizzee@gmail.com"
+                                target="_blank">rizwanpizzee@gmail.com</a>
+                        </p>
+                        <label>GitHub:</label>
+                        <a class="contact-info" href="https://github.com/rizwanPizzee" target="_blank">Rizwan Pizzee</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="outer-layout" id="outer-layout">
+        <div class="middle-layer" id="middle-layer-id">
+            <h1 class="heading-AER">ANNUAL EXAMINATIONS RESULTS</h1>
+
+            <div class="inner-layout">
+                <div class="details">
+                    <label class="info-details">Your Name</label>
+                    <input class="input-field" id="details-name" type="text" placeholder="Enter Your Name..."
+                        maxlength="18" onkeypress="return /[a-zA-Z\s]/.test(event.key)" onkeydown="if(event.key === 'Enter'){
+                            searchButton('outer-layout','outer-warning', 'details-name', 'details-fname', 'details-roll-no', 'result');
+                        }">
+                    <br>
+                    <label class="info-details">Father Name</label>
+                    <input class="input-field" id="details-fname" type="text" placeholder="Enter Your Father Name..."
+                        maxlength="18" onkeypress="return /[a-zA-Z\s]/.test(event.key)" onkeydown="if(event.key === 'Enter'){
+                            searchButton('outer-layout','outer-warning', 'details-name', 'details-fname', 'details-roll-no', 'result');
+                        }">
+                    <br>
+                    <label class="info-details">Roll No.</label>
+                    <input class="input-field" id="details-roll-no" type="text" placeholder="Enter Your Roll No. ..."
+                        maxlength="18" onkeydown="if(event.key === 'Enter'){
+                            searchButton('outer-layout','outer-warning', 'details-name', 'details-fname', 'details-roll-no', 'result');
+                        }">
+                    <button
+                        onclick="searchButton('outer-layout','outer-warning', 'details-name', 'details-fname', 'details-roll-no', 'result')"
+                        class="button-search">
+                        Search Result
+                    </button>
+
+                    <div class="outer-warning" id="outer-warning" onkeydown="if(event.code === 'Escape'){
+                        displayNone('outer-warning');
+                    }">
+                        <div class="warning-div">
+                            <h3>WARNING!</h3>
+                            <p class="warning-text">Enter All of The Fields</p>
+                            <button onclick="displayNone('outer-warning');" class="warning-close-btn">Close</button>
+                            <button onclick="displayNone('outer-warning');" class="warning-cross-btn">X</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <div class="result" id="result">
+        <div class="result-inner" id="result-inner">
+            <div class="candidate-details">
+                <div class="candidate-details-left">
+                    <p>Roll No.</p>
+                    <p>Registration No.</p>
+                    <p id="c-name-in">Candidate's Name</p>
+                    <p id="f-name-in">Father Name</p>
+                    <p id="ist-name">Institute</p>
+                    <p>Total Marks</p>
+                    <p>Remarks</p>
+                </div>
+                <div class="img-std-div">
+                    <img class="img-std" src="images/u_person.png" alt="std_img">
+                </div>
+                <div class="candidate-details-right">
+                    <p id="roll-no-out">Roll No. Details</p>
+                    <p id="reg-no-out">Registration No. Details</p>
+                    <p id="c-name-out">Candidate's Name Details</p>
+                    <p id="f-name-out">Father Name Details</p>
+                    <p id="institute-out">Institute Details</p>
+                    <p id="t-marks-out">Total Marks Details</p>
+                    <p id="remarks-out">No Remarks</p>
+                </div>
+            </div>
+            <hr class="h-line">
+            <div class="candidate-result">
+                <div>
+                    <div class="heading-table">S. #</div>
+                    <div class="table-entries" id="sr1">1</div>
+                    <div class="table-entries" id="sr2">2</div>
+                    <div class="table-entries" id="sr3">3</div>
+                    <div class="table-entries" id="sr4">4</div>
+                    <div class="table-entries" id="sr5">5</div>
+                    <div class="table-entries" id="sr6">6</div>
+                </div>
+                <div>
+                    <div class="heading-table">SUBJECT</div>
+                    <div class="table-entries" id="sub1">ENGLISH</div>
+                    <div class="table-entries" id="sub2">NETWORKING</div>
+                    <div class="table-entries" id="sub3">MATHEMATICS</div>
+                    <div class="table-entries" id="sub4">APPLIED PHYSICS</div>
+                    <div class="table-entries" id="sub5">PROGRAMMING FUNDAMENTALS</div>
+                    <div class="table-entries" id="sub7">PROG. FUNDAMENTALS</div>
+                    <div class="table-entries" id="sub6">DATA STRUCTURES AND ALGORITHMS</div>
+                </div>
+                <div>
+                    <div class="heading-table">THEORY</div>
+                    <div class="table-entries" id="tsub1">SUB 1</div>
+                    <div class="table-entries" id="tsub2">SUB 2</div>
+                    <div class="table-entries" id="tsub3">SUB 3</div>
+                    <div class="table-entries" id="tsub4">SUB 4</div>
+                    <div class="table-entries" id="tsub5">SUB 5</div>
+                    <div class="table-entries" id="tsub6">SUB 6</div>
+                </div>
+                <div>
+                    <div class="heading-table">PRACTICAL</div>
+                    <div class="table-entries" id="prac1">&nbsp;</div>
+                    <div class="table-entries" id="prac2">&nbsp;</div>
+                    <div class="table-entries" id="prac3">&nbsp;</div>
+                    <div class="table-entries" id="prac4">&nbsp;</div>
+                    <div class="table-entries" id="prac5">&nbsp;</div>
+                    <div class="table-entries" id="prac6">&nbsp;</div>
+                </div>
+            </div>
+
+            <div class="stamp-ceb" id="stamp-ceb">
+                <img class="stamp-ceb-img" src="images/CEB.png" alt="cebstamp">
+            </div>
+
+        </div>
+        <p class="note" id="note">Note: If you spot any errors in the results, please regenerate again!</p>
+
+        <div class="extra-btn">
+            <div>
+                <button class="download-btn" id="download-btn" onclick="downloadDivAsImage()">Download Result</button>
+            </div>
+            <div>
+                <button class="back" id="back" onclick="window.location.reload();">Back To Home</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>made by: rizwanPizzee</p>
+    </footer>
+</body>
+
+</html>
