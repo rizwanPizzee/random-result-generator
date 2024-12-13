@@ -375,7 +375,7 @@ h3 {
 
 .stamp-ceb {
     position: absolute;
-    opacity: 0.1;
+    opacity: 0.2;
     top: 0;
     left: 0;
     right: 0;
@@ -390,6 +390,7 @@ h3 {
     border-radius: 50%;
     margin: 0;
     box-shadow: 0 0 10px rgb(0, 81, 255);
+    opacity: 0.04;
 }
 
 .stamp-ceb p {
@@ -397,7 +398,7 @@ h3 {
     opacity: 1;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -15px;
 }
 
 footer {
@@ -407,9 +408,15 @@ footer {
     bottom: 0;
     text-align: right;
     height: 30px;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(191, 200, 255);
     padding-bottom: 10px;
     padding-right: 20px;
+}
+
+footer p {
+    font-size: 18px;
+    font-family: Arial;
+    color: rgb(47, 0, 255);
 }
 
 @media (max-width:1360px) {
